@@ -12,8 +12,19 @@ def timer(operation):
         return wrapper
     return decorator
 
-@timer(100000000)#z这里对应的就是最外侧的time以及它的参数
+
+
+
+@timer(100000)#z这里对应的就是最外侧的timer以及它的参数
 def add(a,b):
     return a+b
 
-add(1,2)
+# @decorator()
+# def fun1(a,b):
+#      return a*b
+
+@timer(10)
+def qinatao(a,b):
+    add(a,b)
+
+qinatao(1,3)
