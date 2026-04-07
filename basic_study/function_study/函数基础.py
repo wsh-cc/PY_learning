@@ -62,4 +62,3 @@ def check_sanjiaoxing(a,b,c):
         return "等腰三角形"
     else: return "普通三角形"
 
-print(check_sanjiaoxing(3,3,6))

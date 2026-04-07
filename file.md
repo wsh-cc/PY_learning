@@ -18,15 +18,18 @@ Python包管理（后端基础）
 解决项目依赖问题
 2️⃣ 核心工具
 pip：安装和管理Python库
-venv：创建虚拟环境（隔离不同项目）
+venv：创建虚拟环境（隔离不同项目）//目前不知道怎么隐藏
+
 3️⃣ 常用命令
 pip install 包名          # 安装
 pip uninstall 包名        # 卸载
 pip list                 # 查看已安装
 pip install --upgrade 包名  # 更新
+
 4️⃣ 依赖管理（重点）
 pip freeze > requirements.txt     # 导出当前依赖
 pip install -r requirements.txt   # 安装所有依赖
+
 5️⃣ 虚拟环境
 python -m venv venv     # 创建虚拟环境
 
