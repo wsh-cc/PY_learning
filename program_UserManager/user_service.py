@@ -1,5 +1,6 @@
 from storage import load_users, save_users
 from logger import logger
+from package.Is_right_mail import checkemail
 
 
 # 添加用户
@@ -11,13 +12,13 @@ def add_user(name, age, email):
 
     if age <= 0:
         raise ValueError("年龄不合法")
-
+    if not checkemail(email):
+        raise ValueError("邮箱不合法")
     user = {
         "id": len(users) + 1,
         "name": name,
         "age": age,
         "email": email
-        #可以用正则来检验邮箱的合法性，可升级
     }
 
     users.append(user)#
