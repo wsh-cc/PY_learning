@@ -1,6 +1,8 @@
+from math import log
 from storage import load_users, save_users
 from logger import logger
-from package.Is_right_mail import checkemail
+from package.Is_right import checkemail,checkage
+import random
 
 
 # 添加用户
@@ -10,12 +12,12 @@ def add_user(name, age, email):
     if not name:
         raise ValueError("姓名不能为空")#如果name为空字符串，抛出ValueError异常，提示姓名不能为空
 
-    if age <= 0:
+    if not checkage(age):
         raise ValueError("年龄不合法")
     if not checkemail(email):
         raise ValueError("邮箱不合法")
     user = {
-        "id": len(users) + 1,
+       "id":random.randint(0,10000000),#生成一个随机的用户ID，范围从0到1000000
         "name": name,
         "age": age,
         "email": email
@@ -30,7 +32,9 @@ def add_user(name, age, email):
 
 # 查询全部
 def get_users():
+    logger.info("用户查询了所有用户")
     return load_users()
+   
 
 
 # 根据ID查询

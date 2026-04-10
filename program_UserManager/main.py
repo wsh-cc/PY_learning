@@ -21,7 +21,7 @@ def main():
         try:
             if choice == "1":
                 name = input("姓名: ")
-                age = int(input("年龄: "))
+                age = input("年龄: ")
                 email = input("邮箱: ")
 
                 user = add_user(name, age, email)
@@ -53,7 +53,9 @@ def main():
 
             elif choice == "0":
                 break
-
+            
+            
+            
             else:
                 print("输入错误")
 
