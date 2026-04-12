@@ -20,15 +20,17 @@ class BankAccount:
     def deposit(self, amount):
         if amount > 0:
             self.__balance += amount
-            print(f"存款成功，当前余额：{self.__balance}")
+            print(f"存款成功，当前余额：",end='')
+            return self.__balance
         else:
             print("存款金额必须为正数")
 
-account = BankAccount("张三", 1000,"red")
-print(account.owner)  # 张三（公有属性可直接访问）
-print(account._password)  # 123456（受保护属性仍可直接访问，但不建议）
-#print(account.__balance)  # 报错：AttributeError，私有属性无法直接访问
-print(account.check_leiyi('123456'))
-# 通过接口访问和修改私有属性
-print(account.get_balance("123456"))  # 1000
-account.deposit(500)  # 存款成功，当前余额：1500
+if __name__ == "__main__":
+    account = BankAccount("张三", 1000,"red")
+    print(account.owner)  # 张三（公有属性可直接访问）
+    print(account._password)  # 123456（受保护属性仍可直接访问，但不建议）
+    #print(account.__balance)  # 报错：AttributeError，私有属性无法直接访问
+    print(account.check_leiyi('123456'))
+    # 通过接口访问和修改私有属性
+    print(account.get_balance("123456"))  # 1000
+    account.deposit(500)  # 存款成功，当前余额：1500
