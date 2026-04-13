@@ -7,8 +7,4 @@ https://blog.csdn.net/wly55690/article/details/132201974?ops_request_misc=elasti
    r=equests.request('get', 'https://www.baidu.com')
    第一个参数可以为get,post,put,delete等，大小写不敏感
    第二个参数为URL，返回一个Response对象，可以通过Response对象的text属性获取响应内容。
-'''py
-import requests
-r=equests.request('get', 'https://www.baidu.com')
-print(r.status_code)
-'''
+   后面的参数可以是params、data、json、headers等，具体可以参考官方文档：https://docs.python-requests.org/en/latest/api/#requests.request
