@@ -10,10 +10,10 @@ def echo_generator():
     while True:
         value = yield f"你发送了: {value}"
         print(f"收到: {value}")
-gen = echo_generator()
-print(next(gen))      # 初始化生成器，输出: 准备接收
-print(gen.send("你好"))  # 发送值并获取下一个值，输出: 你发送了: 你好
-print(gen.send("不好"))  # 发送值并获取下一个值，输出: 你发送了: 你好
+# gen = echo_generator()
+# print(next(gen))      # 初始化生成器，输出: 准备接收
+# print(gen.send("你好"))  # 发送值并获取下一个值，输出: 你发送了: 你好
+# print(gen.send("不好"))  # 发送值并获取下一个值，输出: 你发送了: 你好
 
 
 def fibonacci():
@@ -23,9 +23,7 @@ def fibonacci():
         a, b = b, a + b
 
 # 获取斐波那契数列的前10个数
-fib_gen = fibonacci()
-fibs = [next(fib_gen) for _ in range(20)]#表示next(fib_gen)调用20次，获取前20个斐波那契数
-print(fibs)  # 输出: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
 
 
 """我写一个装饰器"""
@@ -51,4 +49,10 @@ def Fib(number):
             a, b = b, a+b
     return fib()#返回生成器对象  
 
-print(Fib(2))
+# print(Fib(5))
+
+
+if __name__ == "__main__":
+    fib_gen = fibonacci()
+    fibs = [next(fib_gen) for _ in range(20)]#表示next(fib_gen)调用20次，获取前20个斐波那契数
+    print(fibs)  # 输出: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]

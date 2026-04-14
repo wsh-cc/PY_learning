@@ -48,7 +48,7 @@ def main():
         fetch_url(url, i)
     print(f"单线程耗时: {time.time() - start:.4f} 秒")
 
-    # 多线程
+    # 多线程 对访问网络IO密集型任务，GIL不影响性能，如访问网站
     start = time.time()
     threads = [Thread(target=fetch_url, args=(url, i)) for i, url in enumerate(urls, 1)]
     for t in threads: t.start()
