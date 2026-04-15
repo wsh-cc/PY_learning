@@ -25,7 +25,6 @@ def sing(name,age):
     # os.getppid() #获取当前进程的父进程的id
     print(f"当前进程的id: {os.getpid()}, 父进程的id: {os.getppid()}")
     print(f"{name}唱歌结束了")
-
 def dance(name,age):
     print(f"{age}岁的{name}正在跳舞...")
     time.sleep(3)
@@ -35,7 +34,6 @@ def dance(name,age):
     #  #输出当前进程的名称
     print(f"当前进程的id: {os.getpid()}, 父进程的id: {os.getppid()}")
     print(f"{name}跳舞结束了")
-
 def test1():
      #和线程一样，参数用args 或 kwargs 传递,可以指定进程的名称，默认是Process-1, Process-2..
     p1 = multiprocessing.Process(target = sing,kwargs={"name":"凉","age":19})
@@ -112,8 +110,7 @@ def my_fib(n):
     res = Fib(n)
     print(f"第{n}个斐波那契数是：{res}")
     time.sleep(1)
-    return res 
-    
+    return res     
 def test5():
     # print(multiprocessing.cpu_count())#获取CPU的核心数   我是32核
     p = multiprocessing.Pool(3)#创建一个进程池，最多同时运行3个进程，最好为cpu核数
