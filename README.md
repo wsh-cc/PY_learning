@@ -1,6 +1,5 @@
 # PY_learning
 learning py from now on 
 
-<<<<<<< HEAD
-code in master...
-
+## today is 2026-04-16
+I will learn Web Crawling  
