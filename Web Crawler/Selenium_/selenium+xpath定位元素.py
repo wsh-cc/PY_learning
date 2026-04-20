@@ -35,11 +35,13 @@ driver.find_element(by='xpath', value='//input[@placeholder="请输入密码"]')
 
 driver.find_element(by='xpath', value='//button[@class="!text-18px ant-btn ant-btn-primary ant-btn-block"]').click()#点击页面上的元素，例如登录按钮等
 
+""""
+.click()  需要点击在也页面看得见的元素
+#ele = driver.find_element(by='',value='')
+#res = ele.location__once_scrolled_into_view#将元素滚动到可见位置
+#res.click()#点击元素
 
-
-
-
-
+"""
 
 
 
