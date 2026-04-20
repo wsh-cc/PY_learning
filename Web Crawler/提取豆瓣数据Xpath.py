@@ -1,6 +1,8 @@
 import requests
 from lxml import etree
 
+import threading # 使用线程优化
+
 from package.SAVEPATH import save_path_inDownload
 class Douban:
     urls=[]
@@ -13,6 +15,8 @@ class Douban:
             self.urls.append(self.url.format(i*25))
       
     def get_data(self,url):
+            
+
             response = requests.get(url,headers=self.headers)
             # page = response.content.decode()# 将二进制的内容转换成字符串
             # html =etree.HTML(page)# 将字符串转换成HTML对象
@@ -34,9 +38,13 @@ class Douban:
                     f.write(f"电影名称: {''.join(title)}\n电影评分: {''.join(rating)}\n评价人数: {''.join(nunmber)}\n电影评价: {''.join(judge)}\n\n")
 
     def run(self):
+        Threads = []#这样会无序
         for url in self.urls:
-             self.get_data(url)
-
+            t=threading.Thread(target=self.get_data, args=(url,))
+            t.start()
+            Threads.append(t)
+        for t in Threads:
+            t.join()
 if __name__ == "__main__":
     # response = requests.get("https://movie.douban.com/top250?start=0&filter=")
     # print(response.request.headers)
