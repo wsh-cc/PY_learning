@@ -11,3 +11,4 @@ __pycache__/
 *.png
 *.txt
 edgedriver_win64
+.idea
